@@ -25,6 +25,7 @@ module.exports = {
         host: "localhost",
         port: "80",
         hot: true,
+
         /* 自动打开浏览器 */
         open: false,
         overlay: {
@@ -35,7 +36,8 @@ module.exports = {
         proxy: {
             "/api": {
                 /* 目标代理服务器地址 */
-                target: targetUrl , //
+
+                target: "http://192.168.101.106" , //
                 /* 允许跨域 */
                 changeOrigin: true,
                 ws: true,
