@@ -19,6 +19,7 @@ module.exports = {
         config.resolve.alias  // 为指定目录设置全局别名
             .set('@', resolve('src'))
             .set('@public', resolve('public'))
+
     },
     devServer: {
         /* 本地ip地址 */
