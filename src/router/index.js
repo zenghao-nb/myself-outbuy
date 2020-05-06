@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+
 import Zyf from './zyf.js'
 import zhRouter from  './zh/zhRouter.js'
 
@@ -17,10 +18,14 @@ Vue.use(VueRouter)
     path: '/about',
     name: 'About',
 
+
     component: () => import('../views/About.vue')
   },
       ...Zyf,
       ...zhRouter,
+
+
+      
 
 
 ]
