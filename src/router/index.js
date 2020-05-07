@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import zhRouter from  './zh/zhRouter.js'
+import mxmRouter from  './mxm/mxmRouter.js'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,7 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
       ...zhRouter,
+      ...mxmRouter,
 
 ]
 
