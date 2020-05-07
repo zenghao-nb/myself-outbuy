@@ -45,16 +45,6 @@
 <script>
     export default {
         name: "MyHeader",
-        methods: {
-            // 登录
-            login() {
-                console.log(111)
-            },
-            // 充会员
-            member() {
-                console.log(222)
-            },
-
             props: ['isLogin'],
             data() {
                 return {}
@@ -94,7 +84,7 @@
                 },
 
             }
-        }
+
     }
 </script>
 
