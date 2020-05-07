@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 
 import Zyf from './zyf.js'
 import zhRouter from  './zh/zhRouter.js'
+import mxmRouter from  './mxm/mxmRouter.js'
 
 
 Vue.use(VueRouter)
@@ -24,6 +25,7 @@ Vue.use(VueRouter)
   },
       ...Zyf,
       ...zhRouter,
+      ...mxmRouter,
 
 
       
