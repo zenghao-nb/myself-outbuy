@@ -19,6 +19,7 @@ Vue.use(VueRouter)
     name: 'About',
 
 
+
     component: () => import('../views/About.vue')
   },
       ...Zyf,
@@ -26,6 +27,7 @@ Vue.use(VueRouter)
 
 
       
+
 
 
 ]
