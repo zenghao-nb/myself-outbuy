@@ -1,8 +1,8 @@
 <template>
     <div class="tablebar">
-        <div>首页</div>
-        <div>订单</div>
-        <div>我的</div>
+        <router-link to="/">首页</router-link> |
+        <router-link to="/about">订单</router-link>|
+        <router-link to="/my">我的</router-link>
     </div>
 </template>
 
@@ -13,6 +13,12 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped >
+    .tablebar{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
 </style>
