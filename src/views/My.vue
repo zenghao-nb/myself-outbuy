@@ -35,9 +35,6 @@
 
 
     .main{
-        background-color: #f8c745;
-
-    .main{
         background-color: #f8f8f8;
         /*background-color: #f8b627;*/
     }
@@ -46,7 +43,6 @@
         position: fixed;
         bottom: 0;
         left: 0;
-
     }
 
 </style>

@@ -13,8 +13,6 @@
         </div>
 <!--        代金券、红包、钱包-->
         <div class="mybag">
-
-
             <div>
                 <img src="../../../public/img/zh/daijinquan.png" alt="">
                 <div>代金券</div>
@@ -24,8 +22,6 @@
                 <div>红包</div>
             </div>
             <div>
-
-
             <div @click="quan">
                 <img src="../../../public/img/zh/daijinquan.png" alt="">
                 <div>代金券</div>
@@ -35,8 +31,6 @@
                 <div>红包</div>
             </div>
             <div @click="wallet">
-
-
                 <img src="../../../public/img/zh/pockt.png" alt="">
                 <div>钱包</div>
             </div>
@@ -45,63 +39,61 @@
 <!--        开会员广告-->
         <img src="../../../public/img/zh/member.png" alt="" class="member" @click="member">
     </div>
+    </div>
 </template>
 
 <script>
     export default {
         name: "MyHeader",
-
-
-        methods:{
+        methods: {
             // 登录
-            login(){
+            login() {
                 console.log(111)
             },
             // 充会员
-            member(){
+            member() {
                 console.log(222)
             },
 
-        props:['isLogin'],
-        data(){
-            return{
+            props: ['isLogin'],
+            data() {
+                return {}
+            },
+            methods: {
+                // 登录
+                login() {
+                    this.$router.push('/Login')
+                },
+                // 充会员
+                member() {
+                    console.log('冲会员')
+                },
+                //优惠券
+                quan() {
+                    if (this.isLogin == false) {
+                        this.$router.push('./login')
+                    } else {
+                        this.$router.push('./cashcoupo')
+                    }
+                },
+                //红包
+                redpock() {
+                    if (this.isLogin == false) {
+                        this.$router.push('./login')
+                    } else {
+                        console.log('红包')
+                    }
+                },
+                //钱包
+                wallet() {
+                    if (this.isLogin == false) {
+                        this.$router.push('./login')
+                    } else {
+                        console.log('钱包')
+                    }
+                },
 
             }
-        },
-        methods:{
-            // 登录
-            login(){
-                this.$router.push('/Login')
-            },
-            // 充会员
-            member(){
-                console.log('冲会员')
-            },
-            //优惠券
-            quan(){
-                if (this.isLogin==false){
-                    this.$router.push('./login')
-                } else {
-                    this.$router.push('./cashcoupo')
-                }
-            },
-            //红包
-            redpock(){
-                if (this.isLogin==false){
-                    this.$router.push('./login')
-                } else {
-                    console.log('红包')
-                }
-            },
-            //钱包
-            wallet(){
-                if (this.isLogin==false){
-                    this.$router.push('./login')
-                } else {
-                    console.log('钱包')
-                }
-            },
-
         }
     }
 </script>
