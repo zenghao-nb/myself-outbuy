@@ -2,11 +2,19 @@
     <div>
 <!--        登录背景、登录按钮-->
         <div class="headerbg">
+
             <div class="login"></div>
+
+
+            <div class="login" @click="login"></div>
+
+
             <div class="clicklogin" @click="login">点击登录/注册</div>
         </div>
 <!--        代金券、红包、钱包-->
         <div class="mybag">
+
+
             <div>
                 <img src="../../../public/img/zh/daijinquan.png" alt="">
                 <div>代金券</div>
@@ -16,6 +24,19 @@
                 <div>红包</div>
             </div>
             <div>
+
+
+            <div @click="quan">
+                <img src="../../../public/img/zh/daijinquan.png" alt="">
+                <div>代金券</div>
+            </div>
+            <div @click="redpock">
+                <img src="../../../public/img/zh/redpack.png" alt="">
+                <div>红包</div>
+            </div>
+            <div @click="wallet">
+
+
                 <img src="../../../public/img/zh/pockt.png" alt="">
                 <div>钱包</div>
             </div>
@@ -29,6 +50,8 @@
 <script>
     export default {
         name: "MyHeader",
+
+
         methods:{
             // 登录
             login(){
@@ -37,7 +60,48 @@
             // 充会员
             member(){
                 console.log(222)
+            },
+
+        props:['isLogin'],
+        data(){
+            return{
+
             }
+        },
+        methods:{
+            // 登录
+            login(){
+                this.$router.push('/Login')
+            },
+            // 充会员
+            member(){
+                console.log('冲会员')
+            },
+            //优惠券
+            quan(){
+                if (this.isLogin==false){
+                    this.$router.push('./login')
+                } else {
+                    this.$router.push('./cashcoupo')
+                }
+            },
+            //红包
+            redpock(){
+                if (this.isLogin==false){
+                    this.$router.push('./login')
+                } else {
+                    console.log('红包')
+                }
+            },
+            //钱包
+            wallet(){
+                if (this.isLogin==false){
+                    this.$router.push('./login')
+                } else {
+                    console.log('钱包')
+                }
+            },
+
         }
     }
 </script>

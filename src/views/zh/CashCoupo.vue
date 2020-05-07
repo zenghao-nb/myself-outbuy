@@ -1,10 +1,12 @@
 <template>
-    <div>111</div>
+    <div>
+        我是代金券
+    </div>
 </template>
 
 <script>
     export default {
-        name: "detail"
+        name: "CashCoupo"
     }
 </script>
 
