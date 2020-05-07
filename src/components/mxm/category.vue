@@ -1,124 +1,74 @@
 <template>
-<div>
+<div class="background">
     <div class="order">
-      <div v-on:click="Tab(1)" id="l1">当前订单</div>
-      <div v-on:click="Tab(2)" id="l2">历史订单</div>
-      <div v-on:click="Tab(3)" id="l3">退款</div>
+      <div  v-for="(obj,index) in tabList" :key="index" v-on:click="Tab(index)" id="l1">{{obj}}</div>
     </div>
-    <!-- 当前订单 -->
-       <div class="his-order" v-on:click="news(index)"  v-for="(obj,index) in goodsList" :key="index" id="d1">
-            <div >
+  <!-- 订单 -->
+       <div class="his-order" v-on:click="news(index)" v-for='(arr,index) in goodsList' :key="index" v-show="arr.type == num+1">
+         <div>
+         <div>  
                 <p  class="time"> 预计<span>12:20</span>到达 </p>
     <img alt="Vue logo" src="../../assets/1588037655561.jpeg" class="img">
-            </div>
+          </div>
             <div class="chinese">
                 <p>牛排顶韩国</p>
                 <p>牛排顶韩国套餐</p>
-                <p>$29</p>
+                <p>￥{{arr.price}}</p>
                 <p class="timer"><span>2020-4-23</span><span>12:00</span></p>
             </div>
-            <div class="order">
-                <div class="rem">取消</div>
-                <div class="sure">催单</div>
-            </div>
-        </div>
-    <!-- 历史订单 -->
-          <div class="his-order" v-on:click="old(index)"  v-for="(obj,index) in goodsList" :key="index" id="d2">
-            <div >
-                <p  class="time"> <span></span> 已完成2020-12-10</p>
-    <img alt="Vue logo" src="../../assets/1588037655561.jpeg" class="img">
-            </div>
-            <div class="chinese">
-                <p>牛排顶韩国</p>
-                <p>牛排顶韩国套餐</p>
-                <p>$29</p>
-                <p class="timer"><span>2020-4-23</span><span>12:00</span></p>
-            </div>
-            <div class="order">
-                <div class="rem">取消</div>
-                <div class="sure">催单</div>
-            </div>
-        </div>
-
-    <!-- 退款 -->
-          <div class="his-order"  v-on:click="ref(index)"  v-for="(obj,index) in goodsList" :key="index" id="d3">
-            <div >
-                <p  class="time">退款中</p>
-    <img alt="Vue logo" src="../../assets/1588037655561.jpeg" class="img">
-            </div>
-            <div class="chinese">
-                <p>牛排顶韩国</p>
-                <p>牛排顶韩国套餐</p>
-                <p>$29</p>
-                <p class="timer"><span>2020-4-23</span><span>12:00</span></p>
-            </div>
-            <div class="order">
-                <div class="rem">删除</div>
-                <div class="sure">查看</div>
-            </div>
-        </div>
+            <div class="orderRight">
+                <div class="rem">{{arr.gg}}</div>
+                <div class="sure">{{arr.yy}}</div>
+                <p>{{arr.dd}}</p>
+            </div>      
+      </div>
+      </div>
    </div> 
 </template>
-
 <script>
-// function Tab(num)
-// {
-//     var i;
-//     for(i=1;i<=4;i++)
-//     {
-//         if(i==num)
-//            document.getElementById("d"+i).style.display="block";
-//          else
-//            document.getElementById("d"+i).style.display="none";
-//     }
-// }
-
 export default {
   name: "Order",
   data() {
     return {
+      num: 0,
+      tabList: ["当前订单", "历史订单", "退款"],
       goodsList: [
-        { name: "mm", type: 1 },
-        { name: "kxs", type: 2 },
-        { name: "bb", type: 1 },
-        { name: "bb", type: 3}
+        { name: "mm", type: 1, time: 10, yy: "取消", gg: "催单", price: 12 },
+         { name: "mm", type: 1, time: 10, yy: "取消", gg: "催单", price: 12 },
+          { name: "mm", type: 1, time: 10, yy: "取消", gg: "催单", price: 12 },
+        { name: "mm", type: 2, time: 10, yy: "取消", gg: "催单", price: 12 },
+        { name: "mm", type: 2, time: 10, yy: "取消", gg: "催单", price: 12 },
+        { name: "mm", type: 3, time: 10, yy: "取消", gg: "催单", price: 12 },
+        { name: "mm", type: 3, time: 10, yy: "取消", gg: "催单", price: 12 },
+        { name: "mm", type: 3, time: 10, yy: "取消", gg: "催单", price: 12 },
+        { name: "mm", type: 3, time: 10, yy: "取消", gg: "催单", price: 12 }
       ]
     };
   },
-  components: {
-    // TableBar,
-    // category
-  },
+  components: {},
   methods: {
-    // news() {
-    //   console.log("jkl");
-    // },
-    //   his() {
-    //   console.log("0000");
-    // },
-    //   rem() {
-    //   console.log("123456789");
-    // }
-    Tab(num){
-     var i;
-         for(i=1;i<=4;i++)
-    {
-        if(i==num)
-           document.getElementById("d"+i).style.display="block";
-         else
-           document.getElementById("d"+i).style.display="none";
-    }
+    news(index) {
+      this.$router.push({
+        path: "/detail"
+      });
+    },
+    Tab(index) {
+      this.num = index;
+      console.log(index);
     }
   }
 };
 </script>
-
 <style scoped>
+.background{
+  background-color: #f8f8f8;
+}
 .order {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+    background-color: #fff;
 }
 
 .his-order {
@@ -126,75 +76,89 @@ export default {
   height: 170px;
   display: flex;
   margin-bottom: 20px;
-  flex-direction: row;
-  background-color: #f2f2f2;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+  margin-top: 20px;
 }
 /* 左边 */
 .time {
   color: #000;
   font-size: 12px;
-  /* // margin-top: 40PX; */
-  margin-left: 10px;
+  position: absolute;
+  top: 0;
+  left: 14px;
 }
 .time > span {
-  font-size: 15px;
+  font-size: 20px;
+  color: #8db4f9;
 }
 
 .img {
   width: 100px;
   height: 100px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   border-radius: 50%;
-  margin-left: 10px;
+  position: absolute;
+  top: 44px;
+  left: 14px;
 }
 /* 中间盒子 */
 .chinese {
   height: 200px;
-  margin-top: 30px;
-  margin-left: 10px;
+  position: absolute;
+  left: 125px;
+  top: 25px;
 }
 .chinese > p {
   text-align: left;
-  line-height: 10px;
+  line-height: 16px;
   padding: 0;
 }
 .chinese > p:nth-child(1) {
-  color: #000;
-  font-size: 20px;
+  color: #2f2f2f;
+  font-size: 18px;
   font-weight: bold;
 }
 .chinese > p:nth-child(2) {
-  color: #3a3a3a;
-  font-size: 18px;
+  color: #292929;
+  font-size: 16px;
 }
 .chinese > p:nth-child(3) {
-  color: red;
+  color: #fd3d00;
   font-size: 20px;
   font-weight: bold;
+  position: absolute;
+  left: 180px;
+  top: 32px;
 }
 .chinese > p:nth-child(4) {
   color: #aaaaaa;
   font-size: 12px;
 }
 
-右盒子 .order {
-  margin-top: 130px;
-  /* margin-left: 10px; */
+/* 右盒子  */
+.orderRight {
+  position: absolute;
+  top: 130px;
+  left: 220px;
 }
 
-.his-order > div > .rem {
-  width: 50px;
+.rem {
+  width: 55px;
   height: 23px;
-  border: 1px solid #a1a1a1;
+  border: 1px solid #8bbbfd;
   border-radius: 30px;
   display: inline-block;
+  color: #989898;
 }
-.his-order > div > .sure {
-  width: 50px;
+.sure {
+  width: 55px;
   height: 23px;
-  border: 1px solid #a1a1a1;
+  border: 1px solid #8bbbfd;
   border-radius: 30px;
   display: inline-block;
-  margin-left: 5px;
+  margin-left: 20px;
+  color: #989898;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
        <category></category>
-        <TableBar></TableBar>
+        <!-- <TableBar></TableBar> -->
     </div>
 </template>
 
@@ -20,5 +20,7 @@
 </script>
 
 <style scoped>
-
+/* *{
+    background: #f8f8f8;
+} */
 </style>
