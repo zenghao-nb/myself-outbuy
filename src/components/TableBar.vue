@@ -15,12 +15,15 @@
 
 <style scoped >
     .tablebar{
+
         position: absolute;
         bottom: 0;
         left: 0;
         display: flex;
         width: 100%;
         height: 47px;
+
+
         justify-content: space-around;
         background-color: #ffdc42;
         /*background-color: white;*/

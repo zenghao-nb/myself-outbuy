@@ -8,19 +8,13 @@
         </div>
         <input type="tel" placeholder="+86" class="tel">
         <div class="input-code">
-            <input type="number" placeholder="请输入验证码" class=" code">
-            <button type="primary" round class="sendmessage">获取验证码</button>
+            <input type="number" placeholder="请输入密码" class=" code">
         </div>
 
         <button type="primary" round class="login">登录</button>
         <div class="register">
-<<<<<<< HEAD
-            <span>注册</span>
-            <span>密码登录</span>
-=======
-            <span @click="register">注册</span>
-            <span @click="phonePassword">密码登录</span>
->>>>>>> zh-branch
+            <span @click="rigster">注册</span>
+            <span @click="loginCode">验证登录</span>
             <span>忘记密码</span>
         </div>
         <div class="other-login">
@@ -33,27 +27,6 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: "login",
-        methods:{
-            back(){
-                this.$router.go(-1)
-<<<<<<< HEAD
-=======
-            },
-            //修改父组件登录界面显示
-            register(){
-                this.$emit('changRigsterState')
-            },
-            //修改父组件手机号密码登录
-            phonePassword(){
-                this.$emit('changePasswordLoginState')
->>>>>>> zh-branch
-            }
-        }
-    }
-</script>
 
 <style scoped lang="less">
     *{
@@ -99,21 +72,6 @@
     .input-code{
         position: relative;
     }
-    .sendmessage{
-        outline:none;
-        border:none;
-        background-color: #91b8ff;
-        border-radius: 80px;
-        color: white;
-        /*display: block;*/
-        font-size: 12px;
-        width: 87px;
-        height: 23px;
-        text-align: center;
-        position: absolute;
-        top: 0;
-        right: 60px;
-    }
     //登录
     .login{
         outline:none;
@@ -143,6 +101,7 @@
             display: inline-block;
             position: absolute;
             right: 0;
+
         }
     }
     //第三方登录
@@ -160,3 +119,22 @@
         }
     }
 </style>
+
+
+<script>
+    export default {
+        name: "Register",
+        methods:{
+            back(){
+                this.$router.go(-1)
+            },
+            rigster(){
+                this.$emit('changeRegisterSate')
+            },
+            loginCode(){
+                this.$emit('changeLoginCodeState')
+            }
+        }
+    }
+</script>
+

@@ -9,9 +9,6 @@ export  default [
         component: () => import(/* webpackChunkName: "about" */ '../../views/My.vue')
     },
 
-
-
-
     // 登录
     {
         path: '/login',
