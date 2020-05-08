@@ -1,21 +1,20 @@
 <template>
   <div id="app">
 
-
-
-    <div id="nav">
-      <router-link to="/about">About</router-link>
-      <router-link to="/dianpu">Dianpu</router-link>
-      <router-link to="/my">My</router-link>
-      <router-link to="/order">Order</router-link>|
-
-    </div>
-
+      <tablebar></tablebar>
 
     <router-view/>
   </div>
 </template>
-
+<script>
+    import  tablebar from './components/TableBar'
+    export default {
+        name: "App",
+        components:{
+            tablebar
+        }
+    }
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
