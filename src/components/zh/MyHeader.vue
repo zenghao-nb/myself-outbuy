@@ -38,7 +38,7 @@
         methods:{
             // 登录
             login(){
-                this.$router.push('/Login')
+                this.$router.push('/login')
             },
             // 充会员
             member(){

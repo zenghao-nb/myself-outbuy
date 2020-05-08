@@ -20,14 +20,10 @@
                     <img src="../../../public/img/zh/收藏.png" alt="">
                     <div>我的收藏</div>
                 </div>
-
-            </div>
-            <div class="other">
                 <div @click="invitation">
                     <img src="../../../public/img/zh/邀请有礼.png" alt="">
                     <div>邀请有礼</div>
                 </div>
-
                 <div @click="invitation">
                     <img src="../../../public/img/zh/商家注入.png" alt="">
                     <div>商家住入</div>
@@ -147,11 +143,9 @@
         border-radius: @br;
         & > .functions {
             display: flex;
-            justify-content: space-around;
+            justify-content: flex-start;
             font-size: 14px;
-
             flex-wrap: wrap;
-
             &>div{
                 margin-right: 20px;
                 margin-top: 10px;
@@ -165,27 +159,13 @@
             }
         }
     }
-    .other {
-        margin-top: 20px;
 
-        margin-left: 14px;
-
-
-        display: flex;
-        justify-content: flex-start;
-        font-size: 14px;
-        & > div > div {
-            margin-top: 4px;
-
-            margin-left: 14px;
-
-        }
-    }
     /*服务*/
     .service{
         overflow: hidden;
         width: 334px;
         /*height: 100px;*/
+        font-size: 14px;
         background-color: white;
         border-radius: @br;
         margin: 14px auto;
@@ -198,7 +178,7 @@
             display: flex;
             justify-content: flex-start;
             &>div{
-                margin-left: 14px;
+                margin-left: 5px;
                 margin-right: 15px;
                 margin-bottom: 10px;
             }
