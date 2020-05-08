@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-      <tablebar></tablebar>
+<!--      <tablebar></tablebar>-->
 
     <router-view/>
   </div>
