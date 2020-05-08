@@ -15,7 +15,6 @@
 
 <style scoped >
     .tablebar{
-
         position: absolute;
         bottom: 0;
         left: 0;

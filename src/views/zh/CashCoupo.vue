@@ -1,7 +1,10 @@
 <template>
+
+
     <div>
         我是代金券
     </div>
+
 </template>
 
 <script>
