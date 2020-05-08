@@ -14,13 +14,8 @@
 
         <button type="primary" round class="login">登录</button>
         <div class="register">
-<<<<<<< HEAD
-            <span>注册</span>
-            <span>密码登录</span>
-=======
             <span @click="register">注册</span>
             <span @click="phonePassword">密码登录</span>
->>>>>>> zh-branch
             <span>忘记密码</span>
         </div>
         <div class="other-login">
@@ -39,8 +34,6 @@
         methods:{
             back(){
                 this.$router.go(-1)
-<<<<<<< HEAD
-=======
             },
             //修改父组件登录界面显示
             register(){
@@ -49,7 +42,6 @@
             //修改父组件手机号密码登录
             phonePassword(){
                 this.$emit('changePasswordLoginState')
->>>>>>> zh-branch
             }
         }
     }
